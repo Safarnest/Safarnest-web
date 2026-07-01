@@ -2,62 +2,125 @@ import Button from "../components/Button";
 import SearchBar from "../components/SearchBar";
 import SectionTitle from "../components/SectionTitle";
 import PackageCard from "../components/PackageCard";
+import FeatureCard from "../components/FeatureCard";
+import DestinationCard from "../components/DestinationCard";
+
 import packages from "../data/Packages";
+import features from "../data/features";
+import destinations from "../data/destinations";
 
 function Home() {
   return (
     <>
       {/* Hero Section */}
+      <section className="bg-gradient-to-r from-blue-900 via-blue-800 to-slate-900 text-white pt-28 pb-36">
 
-      <section className="h-screen bg-gradient-to-r from-blue-900 via-blue-800 to-slate-900 text-white flex items-center justify-center">
-        <div className="text-center max-w-4xl px-6">
-          <h1 className="text-6xl md:text-7xl font-bold leading-tight">
+        <div className="max-w-7xl mx-auto px-6 text-center">
+
+          <h1 className="text-5xl md:text-7xl font-bold leading-tight">
             Explore The World
             <br />
             With Confidence
           </h1>
 
           <p className="mt-8 text-xl text-gray-200">
-            Luxury Tours • Honeymoon Packages • Family Holidays • Corporate
-            Travel
+            Luxury Tours • Honeymoon Packages • Family Holidays • Corporate Travel
           </p>
 
-          <div className="mt-10 flex justify-center gap-6">
+          <div className="mt-10 flex justify-center gap-6 flex-wrap">
             <Button text="Explore Packages" />
-
-            <button className="border border-white px-8 py-4 rounded-xl hover:bg-white hover:text-black transition">
-              Get Free Quote
-            </button>
+            <Button text="Get Free Quote" secondary />
           </div>
+
         </div>
+
       </section>
 
       {/* Search Bar */}
-
       <SearchBar />
 
-      {/* Popular Packages */}
+      {/* Featured Packages */}
+      <section className="py-24 bg-white">
 
-      <section className="py-24 bg-gray-100">
         <div className="max-w-7xl mx-auto px-6">
+
           <SectionTitle
-            title="Popular Packages"
-            subtitle="Handpicked destinations for every traveler."
+            title="Featured Tour Packages"
+            subtitle="Best selling holiday packages for your next adventure."
           />
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {packages.map((pkg) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 mt-14">
+
+            {packages.map((item, index) => (
               <PackageCard
-                key={pkg.id}
-                image={pkg.image}
-                title={pkg.title}
-                location={pkg.location}
-                price={pkg.price}
+                key={index}
+                image={item.image}
+                title={item.title}
+                location={item.location}
+                price={item.price}
               />
             ))}
+
           </div>
+
         </div>
+
       </section>
+
+      {/* Why Choose Us */}
+      <section className="py-24 bg-gray-100">
+
+        <div className="max-w-7xl mx-auto px-6">
+
+          <SectionTitle
+            title="Why Choose Safarnest?"
+            subtitle="Travel with confidence and comfort."
+          />
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-14">
+
+            {features.map((item, index) => (
+              <FeatureCard
+                key={index}
+                icon={item.icon}
+                title={item.title}
+                description={item.description}
+              />
+            ))}
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* Popular Destinations */}
+      <section className="py-24 bg-white">
+
+        <div className="max-w-7xl mx-auto px-6">
+
+          <SectionTitle
+            title="Popular Destinations"
+            subtitle="Explore our most loved destinations."
+          />
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-14">
+
+            {destinations.map((item, index) => (
+              <DestinationCard
+                key={index}
+                image={item.image}
+                title={item.title}
+                tours={item.tours}
+              />
+            ))}
+
+          </div>
+
+        </div>
+
+      </section>
+
     </>
   );
 }
