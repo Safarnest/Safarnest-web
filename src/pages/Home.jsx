@@ -12,8 +12,14 @@ import destinations from "../data/destinations";
 function Home() {
   return (
     <>
+
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-900 via-blue-800 to-slate-900 text-white pt-28 pb-36">
+      <section
+  id="home"
+  data-aos="fade-up"
+  className="bg-gradient-to-r from-blue-900 via-blue-800 to-slate-900 text-white pt-28 pb-36"
+
+      >
 
         <div className="max-w-7xl mx-auto px-6 text-center">
 
@@ -40,7 +46,12 @@ function Home() {
       <SearchBar />
 
       {/* Featured Packages */}
-      <section className="py-24 bg-white">
+      <section
+  id="packages"
+  data-aos="fade-up"
+  className="py-24 bg-white"
+
+      >
 
         <div className="max-w-7xl mx-auto px-6">
 
@@ -51,14 +62,20 @@ function Home() {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 mt-14">
 
-            {packages.map((item, index) => (
-              <PackageCard
-                key={index}
-                image={item.image}
-                title={item.title}
-                location={item.location}
-                price={item.price}
-              />
+           {packages.map((item, index) => (
+  <div
+    key={index}
+    data-aos="zoom-in"
+    data-aos-delay={index * 150}
+  >
+    <PackageCard
+      image={item.image}
+      title={item.title}
+      location={item.location}
+      price={item.price}
+    />
+  </div>
+
             ))}
 
           </div>
@@ -68,7 +85,10 @@ function Home() {
       </section>
 
       {/* Why Choose Us */}
-      <section className="py-24 bg-gray-100">
+      <section
+      data-aos="fade-up"
+        className="py-24 bg-gray-100"
+      >
 
         <div className="max-w-7xl mx-auto px-6">
 
@@ -95,7 +115,11 @@ function Home() {
       </section>
 
       {/* Popular Destinations */}
-      <section className="py-24 bg-white">
+      <section
+        id="destinations"
+        data-aos="fade-up"
+        className="py-24 bg-white"
+      >
 
         <div className="max-w-7xl mx-auto px-6">
 
