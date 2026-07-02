@@ -1,34 +1,49 @@
-function Newsletter() {
+function PackageCard({ image, title, location, price }) {
   return (
-    <section className="bg-gradient-to-r from-blue-900 via-blue-800 to-slate-900 py-20">
-      <div className="max-w-4xl mx-auto px-6 text-center">
+    <div className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl hover:-translate-y-3 transition-all duration-500 group cursor-pointer">
 
-        <h2 className="text-5xl font-bold text-white">
-          Ready For Your Next Adventure?
-        </h2>
+      {/* Image */}
+      <div className="overflow-hidden">
+        <img
+          src={image}
+          alt={title}
+          className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-700"
+        />
+      </div>
 
-        <p className="text-gray-300 mt-5 text-xl">
-          Subscribe now and receive exclusive holiday offers, travel tips and
-          exciting deals.
+      {/* Content */}
+      <div className="p-6">
+
+        <h3 className="text-3xl font-bold text-gray-900">
+          {title}
+        </h3>
+
+        <p className="mt-3 text-gray-500 flex items-center gap-2">
+          📍 {location}
         </p>
 
-        <div className="mt-10 flex flex-col md:flex-row justify-center gap-4">
+        <div className="mt-6 flex justify-between items-center">
 
-          <input
-            type="email"
-            placeholder="Enter your email"
-            className="px-6 py-4 rounded-xl w-full md:w-96 text-black outline-none"
-          />
+          <div>
+            <p className="text-sm text-gray-500">
+              Starting From
+            </p>
 
-          <button className="bg-yellow-400 hover:bg-yellow-500 text-black font-bold px-8 py-4 rounded-xl transition">
-            Subscribe
+            <h4 className="text-3xl font-bold text-blue-900">
+              ₹ {price}
+            </h4>
+          </div>
+
+          <button className="bg-yellow-400 hover:bg-yellow-500 px-5 py-3 rounded-xl font-semibold transition">
+            View
           </button>
 
         </div>
 
       </div>
-    </section>
+
+    </div>
   );
 }
 
-export default Newsletter;
+export default PackageCard;

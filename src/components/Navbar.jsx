@@ -5,6 +5,14 @@ import logo from "../assets/logo.png";
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const navLinks = [
+    { name: "Home", href: "#home" },
+    { name: "Packages", href: "#packages" },
+    { name: "Destinations", href: "#destinations" },
+    { name: "About", href: "#about" },
+    { name: "Contact", href: "#contact" },
+  ];
+
   return (
     <nav className="sticky top-0 z-50 bg-white shadow-md">
       <div className="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
@@ -29,12 +37,19 @@ function Navbar() {
         </div>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex gap-10 font-medium text-gray-700">
-          <li><a href="#home" className="hover:text-blue-900">Home</a></li>
-          <li><a href="#packages" className="hover:text-blue-900">Packages</a></li>
-          <li><a href="#destinations" className="hover:text-blue-900">Destinations</a></li>
-          <li><a href="#about" className="hover:text-blue-900">About</a></li>
-          <li><a href="#contact" className="hover:text-blue-900">Contact</a></li>
+        <ul className="hidden md:flex gap-10 font-semibold">
+
+          {navLinks.map((item) => (
+            <li key={item.name}>
+              <a
+                href={item.href}
+                className="relative text-gray-700 hover:text-blue-900 transition duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-yellow-400 after:transition-all after:duration-300 hover:after:w-full"
+              >
+                {item.name}
+              </a>
+            </li>
+          ))}
+
         </ul>
 
         {/* Mobile Button */}
@@ -50,45 +65,16 @@ function Navbar() {
       {menuOpen && (
         <div className="md:hidden bg-white shadow-lg border-t">
 
-          <a
-            href="#home"
-            onClick={() => setMenuOpen(false)}
-            className="block px-6 py-4 hover:bg-gray-100"
-          >
-            Home
-          </a>
-
-          <a
-            href="#packages"
-            onClick={() => setMenuOpen(false)}
-            className="block px-6 py-4 hover:bg-gray-100"
-          >
-            Packages
-          </a>
-
-          <a
-            href="#destinations"
-            onClick={() => setMenuOpen(false)}
-            className="block px-6 py-4 hover:bg-gray-100"
-          >
-            Destinations
-          </a>
-
-          <a
-            href="#about"
-            onClick={() => setMenuOpen(false)}
-            className="block px-6 py-4 hover:bg-gray-100"
-          >
-            About
-          </a>
-
-          <a
-            href="#contact"
-            onClick={() => setMenuOpen(false)}
-            className="block px-6 py-4 hover:bg-gray-100"
-          >
-            Contact
-          </a>
+          {navLinks.map((item) => (
+            <a
+              key={item.name}
+              href={item.href}
+              onClick={() => setMenuOpen(false)}
+              className="block px-6 py-4 hover:bg-blue-50 hover:text-blue-900 transition"
+            >
+              {item.name}
+            </a>
+          ))}
 
         </div>
       )}

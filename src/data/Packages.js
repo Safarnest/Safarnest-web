@@ -1,10 +1,14 @@
+import manali from "../assets/images/manali.jpg";
+import goa from "../assets/images/goa.jpg";
+import kashmir from "../assets/images/kashmir.jpg";
+
 const packages = [
   {
     id: 1,
     title: "Manali Escape",
     location: "Himachal Pradesh",
     price: "12,999",
-    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb"
+    image: manali,
   },
 
   {
@@ -12,7 +16,7 @@ const packages = [
     title: "Goa Beach Holiday",
     location: "Goa",
     price: "14,999",
-    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e"
+    image: goa,
   },
 
   {
@@ -20,8 +24,8 @@ const packages = [
     title: "Kashmir Paradise",
     location: "Jammu & Kashmir",
     price: "18,999",
-    image: "https://images.unsplash.com/photo-1519046904884-53103b34b206"
-  }
+    image: kashmir,
+  },
 ];
 
 export default packages;
