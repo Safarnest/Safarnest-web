@@ -1,36 +1,31 @@
-import { useEffect } from "react";
-import AOS from "aos";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
-import Home from "./pages/Home";
-import Stats from "./components/Stats";
-import Testimonials from "./components/Testimonials";
-import Newsletter from "./components/Newsletter";
-import Footer from "./components/Footer";
 import WhatsAppButton from "./components/WhatsAppButton";
-import ScrollToTop from "./components/ScrollToTop";
+
+import Home from "./pages/Home";
+import Packages from "./pages/Packages";
+import Destinations from "./pages/Destinations";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import NotFound from "./pages/NotFound";
 
 function App() {
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      easing: "ease-in-out",
-      once: true,
-      offset: 100,
-    });
-  }, []);
-
   return (
-    <>
+    <BrowserRouter>
       <Navbar />
-      <Home />
-      <Stats />
-      <Testimonials />
-      <Newsletter />
-      <Footer />
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/packages" element={<Packages />} />
+        <Route path="/destinations" element={<Destinations />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+
       <WhatsAppButton />
-      <ScrollToTop />
-    </>
+    </BrowserRouter>
   );
 }
 

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 import { HiMenuAlt3, HiX } from "react-icons/hi";
 import logo from "../assets/logo.png";
 
@@ -6,11 +7,11 @@ function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
 
   const navLinks = [
-    { name: "Home", href: "#home" },
-    { name: "Packages", href: "#packages" },
-    { name: "Destinations", href: "#destinations" },
-    { name: "About", href: "#about" },
-    { name: "Contact", href: "#contact" },
+    { name: "Home", path: "/" },
+    { name: "Packages", path: "/packages" },
+    { name: "Destinations", path: "/destinations" },
+    { name: "About", path: "/about" },
+    { name: "Contact", path: "/contact" },
   ];
 
   return (
@@ -19,6 +20,7 @@ function Navbar() {
 
         {/* Logo */}
         <div className="flex items-center gap-3">
+
           <img
             src={logo}
             alt="Safarnest Holidays"
@@ -34,6 +36,7 @@ function Navbar() {
               Explore Beyond Expectations
             </p>
           </div>
+
         </div>
 
         {/* Desktop Menu */}
@@ -41,12 +44,18 @@ function Navbar() {
 
           {navLinks.map((item) => (
             <li key={item.name}>
-              <a
-                href={item.href}
-                className="relative text-gray-700 hover:text-blue-900 transition duration-300 after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-yellow-400 after:transition-all after:duration-300 hover:after:w-full"
+              <NavLink
+                to={item.path}
+                className={({ isActive }) =>
+                  `relative transition duration-300 ${
+                    isActive
+                      ? "text-blue-900"
+                      : "text-gray-700 hover:text-blue-900"
+                  }`
+                }
               >
                 {item.name}
-              </a>
+              </NavLink>
             </li>
           ))}
 
@@ -59,6 +68,7 @@ function Navbar() {
         >
           {menuOpen ? <HiX /> : <HiMenuAlt3 />}
         </button>
+
       </div>
 
       {/* Mobile Menu */}
@@ -66,18 +76,19 @@ function Navbar() {
         <div className="md:hidden bg-white shadow-lg border-t">
 
           {navLinks.map((item) => (
-            <a
+            <NavLink
               key={item.name}
-              href={item.href}
+              to={item.path}
               onClick={() => setMenuOpen(false)}
               className="block px-6 py-4 hover:bg-blue-50 hover:text-blue-900 transition"
             >
               {item.name}
-            </a>
+            </NavLink>
           ))}
 
         </div>
       )}
+
     </nav>
   );
 }

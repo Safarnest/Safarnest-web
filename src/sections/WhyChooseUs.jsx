@@ -1,0 +1,33 @@
+import SectionTitle from "../components/SectionTitle";
+import FeatureCard from "../components/FeatureCard";
+import features from "../data/features";
+
+function WhyChooseUs() {
+  return (
+    <section id="about" className="py-24 bg-gray-100">
+      <div className="max-w-7xl mx-auto px-6">
+
+        <SectionTitle
+          title="Why Choose Safarnest?"
+          subtitle="Travel with confidence and comfort."
+        />
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-14">
+
+          {features.map((item, index) => (
+            <FeatureCard
+              key={index}
+              icon={item.icon}
+              title={item.title}
+              description={item.description}
+            />
+          ))}
+
+        </div>
+
+      </div>
+    </section>
+  );
+}
+
+export default WhyChooseUs;
