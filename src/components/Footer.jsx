@@ -11,10 +11,7 @@ import {
 
 function Footer() {
   return (
-    <footer
-      id="contact"
-      className="bg-slate-900 text-white pt-16 pb-8"
-    >
+    <footer className="bg-slate-900 text-white pt-16 pb-8">
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-4 gap-10">
 
         {/* Company */}
@@ -37,47 +34,25 @@ function Footer() {
           </h3>
 
           <ul className="space-y-3 text-gray-400">
-
-            <li>
-              <a
-                href="#home"
-                className="hover:text-yellow-400 transition duration-300"
-              >
-                Home
-              </a>
+            <li className="hover:text-yellow-400 cursor-pointer transition duration-300">
+              Home
             </li>
 
-            <li>
-              <a
-                href="#packages"
-                className="hover:text-yellow-400 transition duration-300"
-              >
-                Packages
-              </a>
+            <li className="hover:text-yellow-400 cursor-pointer transition duration-300">
+              Packages
             </li>
 
-            <li>
-              <a
-                href="#destinations"
-                className="hover:text-yellow-400 transition duration-300"
-              >
-                Destinations
-              </a>
+            <li className="hover:text-yellow-400 cursor-pointer transition duration-300">
+              Destinations
             </li>
 
             <li className="hover:text-yellow-400 cursor-pointer transition duration-300">
               About
             </li>
 
-            <li>
-              <a
-                href="#contact"
-                className="hover:text-yellow-400 transition duration-300"
-              >
-                Contact
-              </a>
+            <li className="hover:text-yellow-400 cursor-pointer transition duration-300">
+              Contact
             </li>
-
           </ul>
         </div>
 
@@ -107,27 +82,27 @@ function Footer() {
           </div>
         </div>
 
-        {/* Follow Us */}
+        {/* Social */}
         <div>
           <h3 className="text-xl font-semibold mb-5">
             Follow Us
           </h3>
 
           <p className="text-gray-400 mb-5">
-            Stay connected with us for the latest travel deals and updates.
+            Stay connected with us for travel deals, offers and updates.
           </p>
 
           <div className="flex gap-5 text-2xl">
 
-            <FaFacebook className="cursor-pointer hover:text-blue-500 hover:scale-110 transition duration-300" />
+            <FaFacebook className="cursor-pointer hover:text-blue-500 hover:scale-110 transition-all duration-300" />
 
-            <FaInstagram className="cursor-pointer hover:text-pink-500 hover:scale-110 transition duration-300" />
+            <FaInstagram className="cursor-pointer hover:text-pink-500 hover:scale-110 transition-all duration-300" />
 
-            <FaYoutube className="cursor-pointer hover:text-red-500 hover:scale-110 transition duration-300" />
+            <FaYoutube className="cursor-pointer hover:text-red-500 hover:scale-110 transition-all duration-300" />
 
-            <FaLinkedin className="cursor-pointer hover:text-blue-400 hover:scale-110 transition duration-300" />
+            <FaLinkedin className="cursor-pointer hover:text-blue-400 hover:scale-110 transition-all duration-300" />
 
-            <FaWhatsapp className="cursor-pointer hover:text-green-500 hover:scale-110 transition duration-300" />
+            <FaWhatsapp className="cursor-pointer hover:text-green-500 hover:scale-110 transition-all duration-300" />
 
           </div>
 
@@ -137,7 +112,7 @@ function Footer() {
 
       <hr className="border-gray-700 my-10" />
 
-      <div className="text-center text-gray-500 space-y-2">
+      <div className="text-center text-gray-500">
 
         <p>
           © 2026{" "}
@@ -147,7 +122,9 @@ function Footer() {
           . All Rights Reserved.
         </p>
 
-        <p>Crafted with ❤️ in India</p>
+        <p className="mt-2">
+          Crafted with ❤️ in India
+        </p>
 
       </div>
     </footer>
