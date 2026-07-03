@@ -1,10 +1,16 @@
+import PackageHero from "../sections/packages/PackageHero";
+import PackageFilter from "../sections/packages/PackageFilter";
+import PackageGrid from "../sections/packages/PackageGrid";
+import WhyBookUs from "../sections/packages/WhyBookUs";
+
 function Packages() {
   return (
-    <div className="max-w-7xl mx-auto py-32 text-center">
-      <h1 className="text-5xl font-bold text-blue-900">
-        Packages Page
-      </h1>
-    </div>
+    <>
+      <PackageHero />
+      <PackageFilter />
+      <PackageGrid />
+      <WhyBookUs />
+    </>
   );
 }
 

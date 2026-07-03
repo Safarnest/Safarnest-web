@@ -6,6 +6,7 @@ import WhatsAppButton from "./components/WhatsAppButton";
 
 import Home from "./pages/Home";
 import Packages from "./pages/Packages";
+import PackageDetails from "./pages/PackageDetails";
 import Destinations from "./pages/Destinations";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -17,8 +18,10 @@ function App() {
       <Navbar />
 
       <Routes>
+        <Route path="/packages/:slug" element={<PackageDetails />} />
         <Route path="/" element={<Home />} />
         <Route path="/packages" element={<Packages />} />
+        <Route path="/package-details" element={<PackageDetails />} />
         <Route path="/destinations" element={<Destinations />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
@@ -26,7 +29,6 @@ function App() {
       </Routes>
 
       <Footer />
-
       <WhatsAppButton />
     </BrowserRouter>
   );
