@@ -1,23 +1,23 @@
-import Hero from "../sections/Hero";
-import SearchSection from "../sections/SearchSection";
-import FeaturedPackages from "../sections/FeaturedPackages";
-import WhyChooseUs from "../sections/WhyChooseUs";
-import PopularDestinations from "../sections/PopularDestinations";
-import StatsSection from "../sections/StatsSection";
-import TestimonialsSection from "../sections/TestimonialsSection";
-import NewsletterSection from "../sections/NewsletterSection";
+import Hero from "../sections/home/Hero";
+import SearchSection from "../sections/home/SearchSection";
+import PopularDestinations from "../sections/home/PopularDestinations";
+import FeaturedPackages from "../sections/home/FeaturedPackages";
+import WhyChooseUs from "../sections/home/WhyChooseUs";
+import StatsSection from "../sections/home/StatsSection";
+import TestimonialsSection from "../sections/home/TestimonialsSection";
+import CTASection from "../sections/home/CTASection";
 
 function Home() {
   return (
     <>
       <Hero />
       <SearchSection />
+      <PopularDestinations />
       <FeaturedPackages />
       <WhyChooseUs />
-      <PopularDestinations />
       <StatsSection />
       <TestimonialsSection />
-      <NewsletterSection />
+      <CTASection />
     </>
   );
 }

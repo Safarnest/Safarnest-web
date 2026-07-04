@@ -1,41 +1,42 @@
 import { FaTimesCircle } from "react-icons/fa";
 
-function Exclusions() {
-  const exclusions = [
-    "Airfare / Train Tickets",
-    "Personal Expenses",
-    "Adventure Activities",
-    "Travel Insurance",
-    "Lunch",
-    "Entry Tickets",
-  ];
-
+function Exclusions({ packageData }) {
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-24 bg-slate-100">
+
       <div className="max-w-7xl mx-auto px-6">
 
-        <h2 className="text-4xl font-bold text-blue-900 mb-10">
+        <h2 className="text-5xl font-bold text-blue-900 text-center">
           Package Exclusions
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <p className="text-center text-gray-600 mt-5 text-lg">
+          The following services are not included.
+        </p>
 
-          {exclusions.map((item, index) => (
+        <div className="grid md:grid-cols-2 gap-8 mt-16">
+
+          {packageData.exclusions.map((item, index) => (
+
             <div
               key={index}
-              className="flex items-center gap-4 bg-white p-5 rounded-2xl shadow"
+              className="flex items-center gap-5 bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-all duration-300"
             >
-              <FaTimesCircle className="text-red-500 text-2xl" />
 
-              <span className="text-lg">
+              <FaTimesCircle className="text-3xl text-red-500" />
+
+              <p className="text-lg">
                 {item}
-              </span>
+              </p>
+
             </div>
+
           ))}
 
         </div>
 
       </div>
+
     </section>
   );
 }

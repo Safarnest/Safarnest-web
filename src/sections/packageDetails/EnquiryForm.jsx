@@ -1,65 +1,78 @@
 function EnquiryForm() {
+
   return (
-    <section className="py-24 bg-blue-900 text-white">
+
+    <section className="py-24 bg-blue-900">
 
       <div className="max-w-4xl mx-auto px-6">
 
-        <h2 className="text-5xl font-bold text-center">
-          Plan Your Trip
-        </h2>
+        <div className="bg-white rounded-3xl p-10 shadow-2xl">
 
-        <p className="text-center mt-4 text-gray-300">
-          Fill out the form and our travel expert will contact you shortly.
-        </p>
+          <h2 className="text-5xl font-bold text-blue-900 text-center">
 
-        <form className="grid md:grid-cols-2 gap-6 mt-12">
+            Request A Free Quote
 
-          <input
-            type="text"
-            placeholder="Full Name"
-            className="p-4 rounded-xl text-black"
-          />
+          </h2>
 
-          <input
-            type="tel"
-            placeholder="Mobile Number"
-            className="p-4 rounded-xl text-black"
-          />
+          <p className="text-center text-gray-600 mt-5">
 
-          <input
-            type="email"
-            placeholder="Email Address"
-            className="p-4 rounded-xl text-black"
-          />
+            Fill the form and our travel expert will contact you shortly.
 
-          <input
-            type="date"
-            className="p-4 rounded-xl text-black"
-          />
+          </p>
 
-          <input
-            type="number"
-            placeholder="Number of Travelers"
-            className="p-4 rounded-xl text-black md:col-span-2"
-          />
+          <form className="mt-12 grid md:grid-cols-2 gap-6">
 
-          <textarea
-            rows="5"
-            placeholder="Tell us about your travel plan..."
-            className="p-4 rounded-xl text-black md:col-span-2"
-          />
+            <input
+              type="text"
+              placeholder="Full Name"
+              className="border rounded-xl px-5 py-4 outline-none focus:ring-2 focus:ring-blue-600"
+            />
 
-          <button
-            className="bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-4 rounded-xl md:col-span-2 transition"
-          >
-            Get Free Quote
-          </button>
+            <input
+              type="tel"
+              placeholder="Mobile Number"
+              className="border rounded-xl px-5 py-4 outline-none focus:ring-2 focus:ring-blue-600"
+            />
 
-        </form>
+            <input
+              type="email"
+              placeholder="Email Address"
+              className="border rounded-xl px-5 py-4 outline-none focus:ring-2 focus:ring-blue-600 md:col-span-2"
+            />
+
+            <input
+              type="date"
+              className="border rounded-xl px-5 py-4 outline-none focus:ring-2 focus:ring-blue-600"
+            />
+
+            <input
+              type="number"
+              placeholder="Number of Travellers"
+              className="border rounded-xl px-5 py-4 outline-none focus:ring-2 focus:ring-blue-600"
+            />
+
+            <textarea
+              rows="5"
+              placeholder="Your Message"
+              className="border rounded-xl px-5 py-4 outline-none focus:ring-2 focus:ring-blue-600 md:col-span-2"
+            />
+
+            <button
+              className="bg-yellow-400 hover:bg-yellow-500 rounded-xl py-4 font-bold text-lg md:col-span-2 transition"
+            >
+
+              Get Free Quote
+
+            </button>
+
+          </form>
+
+        </div>
 
       </div>
 
     </section>
+
   );
 }
 

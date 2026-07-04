@@ -1,9 +1,13 @@
-import PackageCard from "../../components/PackageCard";
-import packages from "../../data/Packages";
+import PackageCard from "../../components/cards/PackageCard";
+import packages from "../../data/packages";
 
-function RelatedPackages() {
+function RelatedPackages({ currentSlug }) {
+  const relatedPackages = packages
+    .filter((item) => item.slug !== currentSlug)
+    .slice(0, 6);
+
   return (
-    <section className="py-24 bg-gray-100">
+    <section className="py-24 bg-slate-50">
 
       <div className="max-w-7xl mx-auto px-6">
 
@@ -14,26 +18,29 @@ function RelatedPackages() {
           </h2>
 
           <p className="mt-4 text-gray-600 text-lg">
-            Explore more amazing destinations curated just for you.
+            You may also like these amazing holiday packages.
           </p>
 
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
 
-          {packages.slice(0, 3).map((item) => (
+          {relatedPackages.map((item) => (
+
             <PackageCard
               key={item.id}
               image={item.image}
               title={item.title}
               location={item.location}
-              price={item.price}
               duration={item.duration}
               hotel={item.hotel}
               meals={item.meals}
               transport={item.transport}
               rating={item.rating}
+              price={item.price}
+              slug={item.slug}
             />
+
           ))}
 
         </div>

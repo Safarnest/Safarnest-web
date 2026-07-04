@@ -2,77 +2,67 @@ import {
   FaHotel,
   FaUtensils,
   FaBus,
-  FaUsers,
-  FaCalendarAlt,
-  FaMapMarkerAlt,
+  FaClock,
 } from "react-icons/fa";
 
-function QuickInfo() {
+function QuickInfo({ packageData }) {
   const info = [
     {
       icon: <FaHotel />,
       title: "Hotel",
-      value: "4 Star Premium Stay",
+      value: packageData.hotel,
     },
     {
       icon: <FaUtensils />,
       title: "Meals",
-      value: "Breakfast & Dinner",
+      value: packageData.meals,
     },
     {
       icon: <FaBus />,
       title: "Transport",
-      value: "Volvo Included",
+      value: packageData.transport,
     },
     {
-      icon: <FaUsers />,
-      title: "Group Size",
-      value: "2 - 20 People",
-    },
-    {
-      icon: <FaCalendarAlt />,
+      icon: <FaClock />,
       title: "Duration",
-      value: "5 Nights / 6 Days",
-    },
-    {
-      icon: <FaMapMarkerAlt />,
-      title: "Pickup",
-      value: "Delhi",
+      value: packageData.duration,
     },
   ];
 
   return (
     <section className="py-20 bg-white">
+
       <div className="max-w-7xl mx-auto px-6">
 
-        <h2 className="text-4xl font-bold text-blue-900 mb-12">
-          Quick Information
-        </h2>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
 
           {info.map((item, index) => (
+
             <div
               key={index}
-              className="bg-gray-50 rounded-2xl p-6 shadow hover:shadow-xl transition"
+              className="bg-slate-50 rounded-3xl p-8 shadow hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
             >
-              <div className="text-4xl text-blue-900 mb-4">
+
+              <div className="text-4xl text-blue-900">
                 {item.icon}
               </div>
 
-              <h3 className="text-xl font-bold">
+              <h3 className="mt-6 text-2xl font-bold text-slate-900">
                 {item.title}
               </h3>
 
-              <p className="mt-2 text-gray-600">
+              <p className="mt-3 text-gray-600 leading-7">
                 {item.value}
               </p>
+
             </div>
+
           ))}
 
         </div>
 
       </div>
+
     </section>
   );
 }

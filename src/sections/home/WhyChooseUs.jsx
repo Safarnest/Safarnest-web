@@ -1,6 +1,6 @@
-import SectionTitle from "../components/SectionTitle";
-import FeatureCard from "../components/FeatureCard";
-import features from "../data/features";
+import SectionTitle from "../../components/common/SectionTitle";
+import FeatureCard from "../../components/cards/FeatureCard";
+import features from "../../data/features";
 
 function WhyChooseUs() {
   return (
@@ -17,9 +17,7 @@ function WhyChooseUs() {
           {features.map((item, index) => (
             <FeatureCard
               key={index}
-              icon={item.icon}
-              title={item.title}
-              description={item.description}
+              {...item}
             />
           ))}
 

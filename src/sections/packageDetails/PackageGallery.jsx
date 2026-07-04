@@ -1,36 +1,35 @@
-import manali from "../../assets/images/manali.jpg";
-import goa from "../../assets/images/goa.jpg";
-import kashmir from "../../assets/images/kashmir.jpg";
-
-function PackageGallery() {
+function PackageGallery({ packageData }) {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-24 bg-slate-100">
 
       <div className="max-w-7xl mx-auto px-6">
 
-        <h2 className="text-4xl font-bold text-blue-900 mb-10">
-          Package Gallery
+        <h2 className="text-5xl font-bold text-blue-900 text-center">
+          Tour Gallery
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <p className="mt-5 text-center text-gray-600 text-lg">
+          Explore beautiful moments from {packageData.title}
+        </p>
 
-          <img
-            src={manali}
-            alt="Manali"
-            className="rounded-3xl h-80 w-full object-cover hover:scale-105 transition duration-500 cursor-pointer"
-          />
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
 
-          <img
-            src={goa}
-            alt="Goa"
-            className="rounded-3xl h-80 w-full object-cover hover:scale-105 transition duration-500 cursor-pointer"
-          />
+          {packageData.gallery.map((image, index) => (
 
-          <img
-            src={kashmir}
-            alt="Kashmir"
-            className="rounded-3xl h-80 w-full object-cover hover:scale-105 transition duration-500 cursor-pointer"
-          />
+            <div
+              key={index}
+              className="overflow-hidden rounded-3xl shadow-lg group"
+            >
+
+              <img
+                src={image}
+                alt={`${packageData.title} ${index + 1}`}
+                className="h-80 w-full object-cover group-hover:scale-110 transition duration-700"
+              />
+
+            </div>
+
+          ))}
 
         </div>
 

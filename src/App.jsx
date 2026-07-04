@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
+import Navbar from "./components/layout/Navbar";
+import Footer from "./components/layout/Footer";
 import WhatsAppButton from "./components/WhatsAppButton";
 
 import Home from "./pages/Home";
@@ -18,10 +18,9 @@ function App() {
       <Navbar />
 
       <Routes>
-        <Route path="/packages/:slug" element={<PackageDetails />} />
         <Route path="/" element={<Home />} />
         <Route path="/packages" element={<Packages />} />
-        <Route path="/package-details" element={<PackageDetails />} />
+        <Route path="/packages/:slug" element={<PackageDetails />} />
         <Route path="/destinations" element={<Destinations />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />

@@ -1,6 +1,6 @@
-import SectionTitle from "../components/SectionTitle";
-import DestinationCard from "../components/DestinationCard";
-import destinations from "../data/destinations";
+import SectionTitle from "../../components/common/SectionTitle";
+import DestinationCard from "../../components/cards/DestinationCard";
+import destinations from "../../data/destinations";
 
 function PopularDestinations() {
   return (
@@ -17,9 +17,7 @@ function PopularDestinations() {
           {destinations.map((item) => (
             <DestinationCard
               key={item.id}
-              image={item.image}
-              title={item.title}
-              tours={item.tours}
+              {...item}
             />
           ))}
 

@@ -1,43 +1,42 @@
 import { FaCheckCircle } from "react-icons/fa";
 
-function Inclusions() {
-  const inclusions = [
-    "Luxury Hotel Accommodation",
-    "Daily Breakfast & Dinner",
-    "Delhi to Manali Volvo Tickets",
-    "Local Sightseeing",
-    "Solang Valley Excursion",
-    "All Toll Taxes & Parking",
-    "Driver Allowance",
-    "24×7 Customer Support",
-  ];
-
+function Inclusions({ packageData }) {
   return (
-    <section className="py-20 bg-white">
+    <section className="py-24 bg-white">
+
       <div className="max-w-7xl mx-auto px-6">
 
-        <h2 className="text-4xl font-bold text-blue-900 mb-10">
+        <h2 className="text-5xl font-bold text-blue-900 text-center">
           Package Inclusions
         </h2>
 
-        <div className="grid md:grid-cols-2 gap-6">
+        <p className="text-center text-gray-600 mt-5 text-lg">
+          Everything included in your holiday package.
+        </p>
 
-          {inclusions.map((item, index) => (
+        <div className="grid md:grid-cols-2 gap-8 mt-16">
+
+          {packageData.inclusions.map((item, index) => (
+
             <div
               key={index}
-              className="flex items-center gap-4 bg-gray-50 p-5 rounded-2xl shadow"
+              className="flex items-center gap-5 bg-slate-100 rounded-2xl p-6 hover:shadow-lg transition-all duration-300"
             >
-              <FaCheckCircle className="text-green-600 text-2xl" />
 
-              <span className="text-lg">
+              <FaCheckCircle className="text-3xl text-green-600" />
+
+              <p className="text-lg font-medium">
                 {item}
-              </span>
+              </p>
+
             </div>
+
           ))}
 
         </div>
 
       </div>
+
     </section>
   );
 }

@@ -1,28 +1,36 @@
+import SectionTitle from "../../components/common/SectionTitle";
 import PackageCard from "../../components/cards/PackageCard";
-import packages from "../../data/packages";
+import packages from "../../data/Packages";
 
-function PackageGrid() {
+function FeaturedPackages() {
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-28 bg-slate-50">
 
       <div className="max-w-7xl mx-auto px-6">
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <SectionTitle
+          title="Featured Tour Packages"
+          subtitle="Handpicked holiday experiences across India and international destinations."
+        />
+
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 gap-8 mt-16">
 
           {packages.map((item) => (
+
             <PackageCard
-            slug={item.slug}
               key={item.id}
               image={item.image}
               title={item.title}
               location={item.location}
-              price={item.price}
               duration={item.duration}
               hotel={item.hotel}
               meals={item.meals}
               transport={item.transport}
               rating={item.rating}
+              price={item.price}
+              slug={item.slug}
             />
+
           ))}
 
         </div>
@@ -33,4 +41,4 @@ function PackageGrid() {
   );
 }
 
-export default PackageGrid;
+export default FeaturedPackages;
