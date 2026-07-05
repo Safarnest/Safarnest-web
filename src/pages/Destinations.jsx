@@ -1,10 +1,24 @@
+import Hero from "../components/destinations/Hero";
+import SearchBar from "../components/destinations/SearchBar";
+import PopularDestinations from "../components/destinations/PopularDestinations";
+import DomesticDestinations from "../components/destinations/DomesticDestinations";
+import InternationalDestinations from "../components/destinations/InternationalDestinations";
+import WhyChoose from "../components/destinations/WhyChoose";
+import FAQ from "../components/destinations/FAQ";
+import CTA from "../components/destinations/CTA";
+
 function Destinations() {
   return (
-    <div className="max-w-7xl mx-auto py-32 text-center">
-      <h1 className="text-5xl font-bold text-blue-900">
-        Destinations Page
-      </h1>
-    </div>
+    <>
+      <Hero />
+      <SearchBar />
+      <PopularDestinations />
+      <DomesticDestinations />
+      <InternationalDestinations />
+      <WhyChoose />
+      <FAQ />
+      <CTA />
+    </>
   );
 }
 

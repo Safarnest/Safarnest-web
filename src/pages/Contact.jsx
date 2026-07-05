@@ -1,10 +1,22 @@
+import Hero from "../components/contact/Hero";
+import ContactCards from "../components/contact/ContactCards";
+import ContactForm from "../components/contact/ContactForm";
+import Map from "../components/contact/Map";
+import FAQ from "../components/contact/FAQ";
+import CTA from "../components/contact/CTA";
+import FloatingWhatsapp from "../components/contact/FloatingWhatsapp";
+
 function Contact() {
   return (
-    <div className="max-w-7xl mx-auto py-32 text-center">
-      <h1 className="text-5xl font-bold text-blue-900">
-        Contact Us
-      </h1>
-    </div>
+    <>
+      <Hero />
+      <ContactCards />
+      <ContactForm />
+      <Map />
+      <FAQ />
+      <CTA />
+      <FloatingWhatsapp />
+    </>
   );
 }
 

@@ -1,7 +1,10 @@
 import { useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
-function BookingForm() {
+function BookingForm({ packageData }) {
+  const navigate = useNavigate();
+
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -25,6 +28,8 @@ function BookingForm() {
     }
 
     const text = `*New Package Enquiry*
+
+📦 Package: ${packageData.title}
 
 👤 Name: ${formData.name}
 
@@ -50,6 +55,10 @@ ${formData.message || "No Message"}
     e.preventDefault();
 
     alert("Thank you! Our travel expert will contact you shortly.");
+  };
+
+  const handlePlanTrip = () => {
+    navigate(`/enquiry?packageId=${packageData.id}`);
   };
 
   return (
@@ -149,6 +158,14 @@ ${formData.message || "No Message"}
           className="w-full bg-yellow-400 hover:bg-yellow-500 py-4 rounded-xl font-bold transition"
         >
           Get Best Quote
+        </button>
+
+        <button
+          type="button"
+          onClick={handlePlanTrip}
+          className="w-full bg-blue-900 hover:bg-blue-800 text-white py-4 rounded-xl font-bold transition"
+        >
+          Plan My Trip
         </button>
 
         <button

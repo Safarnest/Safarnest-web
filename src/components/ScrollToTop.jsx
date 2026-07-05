@@ -1,40 +1,18 @@
-import { FaArrowUp } from "react-icons/fa";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 function ScrollToTop() {
-  const [showButton, setShowButton] = useState(false);
+  const { pathname } = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setShowButton(window.scrollY > 400);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  const scrollTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth",
+      left: 0,
+      behavior: "auto",
     });
-  };
+  }, [pathname]);
 
-  return (
-    <>
-      {showButton && (
-        <button
-          onClick={scrollTop}
-          className="fixed bottom-24 right-6 bg-blue-900 hover:bg-blue-800 text-white p-4 rounded-full shadow-xl transition duration-300 hover:scale-110 z-50"
-        >
-          <FaArrowUp />
-        </button>
-      )}
-    </>
-  );
+  return null;
 }
 
 export default ScrollToTop;

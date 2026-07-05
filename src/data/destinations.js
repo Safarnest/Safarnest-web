@@ -1,24 +1,70 @@
 const destinations = [
   {
-    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
-    title: "Maldives",
-    tours: "25 Packages"
+    id: 1,
+    name: "Kashmir",
+    category: "Domestic",
+    image: "https://images.unsplash.com/photo-1598091383021-15ddea10925d?w=800",
+    description: "Paradise on Earth with breathtaking valleys and mountains.",
+    startingPrice: "₹14,999",
+    rating: 4.9,
+    packages: 35,
+    slug: "kashmir",
   },
   {
-    image: "https://images.unsplash.com/photo-1526772662000-3f88f10405ff",
-    title: "Dubai",
-    tours: "18 Packages"
+    id: 2,
+    name: "Goa",
+    category: "Domestic",
+    image: "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800",
+    description: "Beautiful beaches, nightlife and unforgettable holidays.",
+    startingPrice: "₹9,999",
+    rating: 4.8,
+    packages: 28,
+    slug: "goa",
   },
   {
-    image: "https://images.unsplash.com/photo-1512453979798-5ea266f8880c",
-    title: "Bali",
-    tours: "30 Packages"
+    id: 3,
+    name: "Himachal Pradesh",
+    category: "Domestic",
+    image: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=800",
+    description: "Snow mountains, adventure and peaceful landscapes.",
+    startingPrice: "₹12,999",
+    rating: 4.8,
+    packages: 24,
+    slug: "himachal-pradesh",
   },
   {
-    image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
-    title: "Manali",
-    tours: "22 Packages"
-  }
+    id: 4,
+    name: "Kerala",
+    category: "Domestic",
+    image: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800",
+    description: "Backwaters, houseboats and lush green nature.",
+    startingPrice: "₹15,999",
+    rating: 4.9,
+    packages: 20,
+    slug: "kerala",
+  },
+  {
+    id: 5,
+    name: "Maldives",
+    category: "International",
+    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800",
+    description: "Luxury island escapes with crystal-clear beaches.",
+    startingPrice: "₹49,999",
+    rating: 4.9,
+    packages: 18,
+    slug: "maldives",
+  },
+  {
+    id: 6,
+    name: "Dubai",
+    category: "International",
+    image: "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?w=800",
+    description: "Modern luxury, shopping and unforgettable attractions.",
+    startingPrice: "₹39,999",
+    rating: 4.8,
+    packages: 22,
+    slug: "dubai",
+  },
 ];
 
 export default destinations;

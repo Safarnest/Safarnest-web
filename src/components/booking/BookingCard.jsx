@@ -9,7 +9,7 @@ function BookingCard({ packageData }) {
 
       <PriceCard packageData={packageData} />
 
-      <BookingForm />
+      <BookingForm packageData={packageData} />
 
       <TrustBadges />
 
