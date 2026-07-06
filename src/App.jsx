@@ -12,6 +12,11 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import Enquiry from "./pages/Enquiry";
+import PrivacyPolicy from "./pages/legal/PrivacyPolicy";
+import TermsConditions from "./pages/legal/TermsConditions";
+import RefundPolicy from "./pages/legal/RefundPolicy";
+import CancellationPolicy from "./pages/legal/CancellationPolicy";
+import Disclaimer from "./pages/legal/Disclaimer";
 
 function App() {
   return (
@@ -30,6 +35,11 @@ function App() {
     <Route path="/contact" element={<Contact />} />
     <Route path="*" element={<NotFound />} />
     <Route path="/enquiry" element={<Enquiry />} />
+    <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+<Route path="/terms-conditions" element={<TermsConditions />} />
+<Route path="/refund-policy" element={<RefundPolicy />} />
+<Route path="/cancellation-policy" element={<CancellationPolicy />} />
+<Route path="/disclaimer" element={<Disclaimer />} />
   </Routes>
 
   <Footer />
