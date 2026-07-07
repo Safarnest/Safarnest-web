@@ -8,12 +8,28 @@ const admin = require("../middleware/adminMiddleware");
 const {
   createPackage,
   getPackages,
+  getPackageBySlug,
+  updatePackage,
+  deletePackage,
 } = require("../controllers/packageController");
 
-// Public
+/* ================= PUBLIC ROUTES ================= */
+
+// Get All Packages
 router.get("/", getPackages);
 
-// Admin Only
+// Get Single Package
+router.get("/:slug", getPackageBySlug);
+
+/* ================= ADMIN ROUTES ================= */
+
+// Create Package
 router.post("/", auth, admin, createPackage);
+
+// Update Package
+router.put("/:id", auth, admin, updatePackage);
+
+// Delete Package
+router.delete("/:id", auth, admin, deletePackage);
 
 module.exports = router;

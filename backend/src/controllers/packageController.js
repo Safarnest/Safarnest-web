@@ -49,7 +49,104 @@ const getPackages = async (req, res) => {
   }
 };
 
+// ================= GET SINGLE PACKAGE =================
+
+const getPackageBySlug = async (req, res) => {
+  try {
+    const packageData = await Package.findOne({
+      slug: req.params.slug,
+    });
+
+    if (!packageData) {
+      return res.status(404).json({
+        success: false,
+        message: "Package Not Found",
+      });
+    }
+
+    res.status(200).json({
+      success: true,
+      data: packageData,
+    });
+
+  } catch (error) {
+    console.error(error);
+
+    res.status(500).json({
+      success: false,
+      message: "Server Error",
+    });
+  }
+};
+
+// ================= UPDATE PACKAGE =================
+
+const updatePackage = async (req, res) => {
+  try {
+    const packageData = await Package.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      {
+        new: true,
+        runValidators: true,
+      }
+    );
+
+    if (!packageData) {
+      return res.status(404).json({
+        success: false,
+        message: "Package Not Found",
+      });
+    }
+
+    res.status(200).json({
+      success: true,
+      message: "Package Updated Successfully",
+      data: packageData,
+    });
+
+  } catch (error) {
+    console.error(error);
+
+    res.status(500).json({
+      success: false,
+      message: "Server Error",
+    });
+  }
+};
+
+// ================= DELETE PACKAGE =================
+
+const deletePackage = async (req, res) => {
+  try {
+    const packageData = await Package.findByIdAndDelete(req.params.id);
+
+    if (!packageData) {
+      return res.status(404).json({
+        success: false,
+        message: "Package Not Found",
+      });
+    }
+
+    res.status(200).json({
+      success: true,
+      message: "Package Deleted Successfully",
+    });
+
+  } catch (error) {
+    console.error(error);
+
+    res.status(500).json({
+      success: false,
+      message: "Server Error",
+    });
+  }
+};
+
 module.exports = {
   createPackage,
   getPackages,
+  getPackageBySlug,
+  updatePackage,
+  deletePackage,
 };
